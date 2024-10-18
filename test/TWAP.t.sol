@@ -4,15 +4,18 @@ pragma solidity 0.8.20;
 
 import {Test, console} from "forge-std/Test.sol";
 import {TWAP} from "src/TWAP.sol";
+import {DeployTWAP} from "script/DeployTWAP.s.sol";
 
 contract TwapTest is Test {
     TWAP twap;
+    DeployTWAP deployer;
 
     /*//////////////////////////////////////////////////////////////
                                  SETUP
     //////////////////////////////////////////////////////////////*/
     function setUp() external virtual {
-        twap = new TWAP();
+        deployer = new DeployTWAP();
+        twap = deployer.run();
     }
 
     /*//////////////////////////////////////////////////////////////

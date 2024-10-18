@@ -5,13 +5,13 @@
 ![Solc](https://img.shields.io/badge/solc-v0.8.20-blue.svg?style=for-the-badge)
 [![GitHub License](https://img.shields.io/github/license/trashpirate/foundry-starter?style=for-the-badge)](https://github.com/trashpirate/foundry-starter/blob/master/LICENSE)
 
-[![Website: nadinaoates.com](https://img.shields.io/badge/Portfolio-00e0a7?style=for-the-badge&logo=Website)](https://nadinaoates.com)
+[![Website: trashpirate.io](https://img.shields.io/badge/Portfolio-00e0a7?style=for-the-badge&logo=Website)](https://trashpirate.io)
 [![LinkedIn: nadinaoates](https://img.shields.io/badge/LinkedIn-0a66c2?style=for-the-badge&logo=LinkedIn&logoColor=f5f5f5)](https://linkedin.com/in/nadinaoates)
-[![Twitter: N0_crypto](https://img.shields.io/badge/@N0_crypto-black?style=for-the-badge&logo=X)](https://twitter.com/N0_crypto)
+[![Twitter: 0xTrashPirate](https://img.shields.io/badge/@0xTrashPirate-black?style=for-the-badge&logo=X)](https://twitter.com/0xTrashPirate)
 
 
 ## About
-Project Description
+This is a library to calculate the TWAP (time-weighted average price) for uniswap V3 pools. May be extended in the future to support V4 as well.
 
 ## Installation
 
@@ -32,9 +32,6 @@ RPC_TEST=<rpc url>
 RPC_MAIN=<rpc url>
 ETHERSCAN_KEY=<api key>
 
-# accounts to deploy/interact with contracts
-ACCOUNT_NAME="account name"
-ACCOUNT_ADDRESS="account address"
 ```
 
 Update chain ids in the `HelperConfig.s.sol` file for the chain you want to configure:
@@ -47,21 +44,6 @@ Update chain ids in the `HelperConfig.s.sol` file for the chain you want to conf
 ```bash
 $ forge test
 ```
-
-### Deploy contract on testnet
-```bash
-$ make deploy-testnet
-```
-
-### Deploy contract on mainnet
-```bash
-$ make deploy-mainnet
-```
-
-## Deployments
-
-### Testnet
-### Mainnet
 
 ## Contributing
 
@@ -80,8 +62,8 @@ Don't forget to give the project a star! Thanks again!
 
 👤 **Nadina Oates**
 
-* Website: [nadinaoates.com](https://nadinaoates.com)
-* Twitter: [@N0\_crypto](https://twitter.com/N0\_crypto)
+* Website: [trashpirate.io](https://trashpirate.io)
+* Twitter: [@0xTrashPirate](https://twitter.com/0xTrashPirate)
 * Github: [@trashpirate](https://github.com/trashpirate)
 * LinkedIn: [@nadinaoates](https://linkedin.com/in/nadinaoates)
 

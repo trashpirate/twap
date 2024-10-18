@@ -16,7 +16,15 @@ contract TWAP {
     /*//////////////////////////////////////////////////////////////
                             STATE VARIABLES
     //////////////////////////////////////////////////////////////*/
-    address constant WETH_USDT_POOL = 0x4e68Ccd3E89f51C3074ca5072bbAC773960dFa36;
+    address immutable i_wethUsdPool;
+
+    /*//////////////////////////////////////////////////////////////
+                               FUNCTIONS
+    //////////////////////////////////////////////////////////////*/
+
+    constructor(address wethUsdPool) {
+        i_wethUsdPool = wethUsdPool;
+    }
 
     /*//////////////////////////////////////////////////////////////
                             PUBLIC FUNCTIONS
@@ -42,7 +50,7 @@ contract TWAP {
 
     function calcTwapInUsd(address pool, uint32 secondsAgo) public view returns (uint256) {
         uint256 ethPrice = calcTwapInEth(pool, secondsAgo);
-        uint256 ethUsdPrice = calcTwapInEth(WETH_USDT_POOL, secondsAgo);
+        uint256 ethUsdPrice = calcTwapInEth(i_wethUsdPool, secondsAgo);
 
         return ethPrice * ethUsdPrice / 1e6;
     }
