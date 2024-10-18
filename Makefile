@@ -14,7 +14,7 @@ clean  :; forge clean
 # Remove modules
 remove :; rm -rf .gitmodules && rm -rf .git/modules/* && rm -rf lib && touch .gitmodules && git add . && git commit -m "modules"
 
-install:; forge install foundry-rs/forge-std --no-commit && forge install Cyfrin/foundry-devops --no-commit
+install:; forge install foundry-rs/forge-std --no-commit && forge install Cyfrin/foundry-devops --no-commit && forge install uniswap/v3-periphery --no-commit && forge install uniswap/v3-core --no-commit
 
 # update dependencies
 update:; forge update
@@ -23,7 +23,7 @@ update:; forge update
 build:; forge build
 
 # test
-test :; forge test 
+test :; forge test --rpc-url 127.0.0.1:8545 -vv
 
 # test coverage
 coverage:; @forge coverage --contracts src
@@ -39,7 +39,7 @@ format :; forge fmt
 anvil :; anvil -m 'test test test test test test test test test test test junk' --steps-tracing --block-time 1
 
 # spin up fork
-fork :; @anvil --fork-url ${RPC_MAIN} --fork-block-number <blocknumber> --fork-chain-id <fork id> --chain-id <custom id>
+fork :; @anvil --fork-url ${RPC_MAIN} --fork-block-number 20993128 --fork-chain-id 1 --chain-id 123
 
 # security
 slither :; slither ./src 

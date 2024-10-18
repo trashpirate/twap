@@ -1,3 +1,5 @@
 ds-test/=lib/forge-std/lib/ds-test/src/
 forge-std/=lib/forge-std/src/
 foundry-devops/=lib/foundry-devops/
+@uniswap/v3-core/contracts/=lib/v3-core/contracts/
+@uniswap/v3-periphery/contracts/=lib/v3-periphery/contracts/
