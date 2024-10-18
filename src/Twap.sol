@@ -8,11 +8,11 @@ import {IUniswapV3Pool} from "@uniswap/v3-core/contracts/interfaces/IUniswapV3Po
 import {TickMath} from "@uniswap/v3-core/contracts/libraries/TickMath.sol";
 
 /**
- *  @title TWAP
- *  @notice This contract allows the functionality to calculate the TWAP of a Uniswap V3 pool.
+ *  @title Twap
+ *  @notice This contract allows the functionality to calculate the Twap of a Uniswap V3 pool.
  *  @dev Needs to be adjusted if pool token1 != WETH
  */
-contract TWAP {
+contract Twap {
     /*//////////////////////////////////////////////////////////////
                             STATE VARIABLES
     //////////////////////////////////////////////////////////////*/

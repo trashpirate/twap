@@ -39,17 +39,17 @@ format :; forge fmt
 anvil :; anvil -m 'test test test test test test test test test test test junk' --steps-tracing --block-time 1
 
 # spin up fork
-fork :; @anvil --fork-url ${RPC_MAIN} --fork-block-number 20993128 --fork-chain-id 1 --chain-id 123
+fork :; @anvil --fork-url ${RPC_MAIN} --fork-block-number ${BLOCK_MAIN} --fork-chain-id ${CHAIN_ID_MAIN} --chain-id 123
 
 # security
 slither :; slither ./src 
 
 # deployment
 deploy-local: 
-	@forge script script/Deploy.s.sol:Deploy --rpc-url $(RPC_LOCALHOST) --private-key ${DEFAULT_ANVIL_KEY} --sender ${DEFAULT_ANVIL_ADDRESS} --broadcast 
+	@forge script script/DeployTwap.s.sol:Deploy --rpc-url $(RPC_LOCALHOST) --private-key ${DEFAULT_ANVIL_KEY} --sender ${DEFAULT_ANVIL_ADDRESS} --broadcast 
 
 deploy: 
-	@forge script script/Deploy.s.sol:Deploy --rpc-url $(RPC_TEST) --account ${ACCOUNT_NAME} --sender ${ACCOUNT_ADDRESS} --broadcast --verify --etherscan-api-key ${ETHERSCAN_API_KEY} -vvvv
+	@forge script script/DeployTwap.s.sol:DeployTwap --rpc-url $(RPC_TEST) --account ${ACCOUNT_NAME} --sender ${ACCOUNT_ADDRESS} --broadcast --verify --etherscan-api-key ${ETHERSCAN_API_KEY} -vvvv
 
 # command line interaction
 contract-call:

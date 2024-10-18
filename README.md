@@ -1,4 +1,4 @@
-# FOUNDRY STARTER
+# TWAP LIBRARY 
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?style=for-the-badge)
 ![Forge](https://img.shields.io/badge/forge-v0.2.0-blue.svg?style=for-the-badge)
@@ -28,9 +28,20 @@ Before running any commands, create a .env file and add the following environmen
 RPC_LOCALHOST="http://127.0.0.1:8545"
 
 # ethereum nework
-RPC_TEST=<rpc url>
-RPC_MAIN=<rpc url>
-ETHERSCAN_KEY=<api key>
+RPC_TEST="<rpc url">
+RPC_MAIN=<"rpc url">
+ETHERSCAN_KEY=<"api key">
+
+# fork configuration
+BLOCK_MAIN=<"block number">
+CHAIN_ID_MAIN=<"chain id">
+
+# pool to use for usd price (mainnet)
+WETH_USD_POOL="0x4e68Ccd3E89f51C3074ca5072bbAC773960dFa36"
+
+# testnet wallets
+ACCOUNT_NAME=Test-Deployer
+ACCOUNT_ADDRESS=0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
 
 ```
 
@@ -40,9 +51,13 @@ Update chain ids in the `HelperConfig.s.sol` file for the chain you want to conf
 - Base: 8453 | Base sepolia: 84532
 - Bsc: 56 | Bsc Testnet: 97
 
+### Launch fork
+```bash
+$ make fork
+```
 ### Run tests
 ```bash
-$ forge test
+$ make test
 ```
 
 ## Contributing

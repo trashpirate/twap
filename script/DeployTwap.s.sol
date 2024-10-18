@@ -2,17 +2,17 @@
 pragma solidity 0.8.20;
 
 import {Script} from "forge-std/Script.sol";
-import {TWAP} from "./../src/TWAP.sol";
+import {Twap} from "./../src/Twap.sol";
 import {HelperConfig} from "./HelperConfig.s.sol";
 
-contract DeployTWAP is Script {
-    function run() external returns (TWAP) {
+contract DeployTwap is Script {
+    function run() external returns (Twap) {
         HelperConfig config = new HelperConfig();
 
         (address ethUsdPool) = config.activeNetworkConfig();
 
         vm.startBroadcast();
-        TWAP twap = new TWAP(ethUsdPool);
+        Twap twap = new Twap(ethUsdPool);
         vm.stopBroadcast();
         return twap;
     }

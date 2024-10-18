@@ -13,7 +13,7 @@ contract HelperConfig is Script {
     /*//////////////////////////////////////////////////////////////
                                 HELPERS
     //////////////////////////////////////////////////////////////*/
-    uint256 constant CONSTANT = 0;
+    address WETH_USD_POOL = vm.envAddress("WETH_USD_POOL");
 
     constructor() {
         if (block.chainid == 1 || block.chainid == 123) {
@@ -28,19 +28,19 @@ contract HelperConfig is Script {
     /*//////////////////////////////////////////////////////////////
                           CHAIN CONFIGURATIONS
     //////////////////////////////////////////////////////////////*/
-    function getTestnetConfig() public pure returns (NetworkConfig memory) {
-        return NetworkConfig({usdPricePool: 0x4e68Ccd3E89f51C3074ca5072bbAC773960dFa36});
+    function getTestnetConfig() public view returns (NetworkConfig memory) {
+        return NetworkConfig({usdPricePool: WETH_USD_POOL});
     }
 
-    function getMainnetConfig() public pure returns (NetworkConfig memory) {
-        return NetworkConfig({usdPricePool: 0x4e68Ccd3E89f51C3074ca5072bbAC773960dFa36});
+    function getMainnetConfig() public view returns (NetworkConfig memory) {
+        return NetworkConfig({usdPricePool: WETH_USD_POOL});
     }
 
-    function getAnvilConfig() public pure returns (NetworkConfig memory) {
+    function getAnvilConfig() public view returns (NetworkConfig memory) {
         // vm.startBroadcast();
         // vm.stopBroadcast();
 
-        return NetworkConfig({usdPricePool: 0x7Bb8be3D9015682d7AC0Ea377dC0c92B0ba152eF});
+        return NetworkConfig({usdPricePool: WETH_USD_POOL});
     }
 
     /*//////////////////////////////////////////////////////////////
