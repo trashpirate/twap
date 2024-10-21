@@ -28,6 +28,13 @@ contract TwapTest is Test {
         console.log(price);
     }
 
+    function test__Twap__getsPriceInTokens() public view {
+        uint32 secondsAgo = 300;
+        address pool = 0x1d42064Fc4Beb5F8aAF85F4617AE8b3b5B8Bd801;
+        uint256 price = twap.calcTwapInTokens(pool, secondsAgo);
+        console.log(price);
+    }
+
     function test__Twap__getsPriceInUsd() public view {
         uint32 secondsAgo = 300;
         address pool = 0x1d42064Fc4Beb5F8aAF85F4617AE8b3b5B8Bd801;
